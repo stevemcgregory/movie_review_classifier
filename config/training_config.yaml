@@ -1,0 +1,6 @@
+# Training configuration
+model_name: distilbert-base-uncased
+epochs: 3
+per_device_train_batch_size: 16
+learning_rate: 5e-5
+output_dir: models/
