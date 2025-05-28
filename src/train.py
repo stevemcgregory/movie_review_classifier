@@ -67,6 +67,11 @@ def main(model_name, output_dir, dataset_name, num_labels, batch_size, epochs):
     results = trainer.evaluate()
     logger.info(f"Evaluation results: {results}")
 
+    model.save_pretrained("models/movie_review_classifier")
+    tokenizer.save_pretrained("models/movie_review_classifier")
+    logger.info("Model saved to models/movie_review_classifier")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train a text classification model with Transformers")
     parser.add_argument("--model_name", type=str, default="distilbert-base-uncased")
